@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/tests\/Features\/GetMethod[1:9]","start":1650125346354,"end":1650125346525,"title":"src\/test\/java\/tests\/Features\/GetMethod[1:9] 17:09:06.354-17:09:06.525 Get API method 1 - Using full url endpoint"},{"id":2,"group":1,"content":"src\/test\/java\/tests\/Features\/GetMethod[2:20]","start":1650125346538,"end":1650125346689,"title":"src\/test\/java\/tests\/Features\/GetMethod[2:20] 17:09:06.538-17:09:06.689 Get API method 2 - using Background"},{"id":3,"group":1,"content":"src\/test\/java\/tests\/Features\/GetMethod[3:28]","start":1650125346698,"end":1650125346798,"title":"src\/test\/java\/tests\/Features\/GetMethod[3:28] 17:09:06.698-17:09:06.798 Get API method 3 - using path and param"},{"id":4,"group":1,"content":"src\/test\/java\/tests\/Features\/GetMethod[4:37]","start":1650125346799,"end":1650125346956,"title":"src\/test\/java\/tests\/Features\/GetMethod[4:37] 17:09:06.799-17:09:06.956 Get API method 3 - using assertions"},{"id":5,"group":1,"content":"src\/test\/java\/tests\/Features\/PostMethod[1:11]","start":1650125347209,"end":1650125347230,"title":"src\/test\/java\/tests\/Features\/PostMethod[1:11] 17:09:07.209-17:09:07.230 Post API method 1 - using full endpoint","className":"failed"},{"id":6,"group":1,"content":"src\/test\/java\/tests\/Features\/PostMethod[2:20]","start":1650125347243,"end":1650125347246,"title":"src\/test\/java\/tests\/Features\/PostMethod[2:20] 17:09:07.243-17:09:07.246 Post API method 2 - using Background","className":"failed"},{"id":7,"group":1,"content":"src\/test\/java\/tests\/Features\/PostMethod[3:29]","start":1650125347252,"end":1650125347254,"title":"src\/test\/java\/tests\/Features\/PostMethod[3:29] 17:09:07.252-17:09:07.254 Post API method 3 - using response Assertions","className":"failed"},{"id":8,"group":1,"content":"src\/test\/java\/tests\/Features\/PostMethod[4:39]","start":1650125347259,"end":1650125347266,"title":"src\/test\/java\/tests\/Features\/PostMethod[4:39] 17:09:07.259-17:09:07.266 Post API method 4 - using reading PostResponse.json file","className":"failed"},{"id":9,"group":1,"content":"src\/test\/java\/tests\/Features\/PostMethod[5:49]","start":1650125347273,"end":1650125347275,"title":"src\/test\/java\/tests\/Features\/PostMethod[5:49] 17:09:07.273-17:09:07.275 Post API method 5 - using reading PostRequest.json file","className":"failed"},{"id":10,"group":1,"content":"src\/test\/java\/tests\/Features\/PostMethod[6:59]","start":1650125347296,"end":1650125347300,"title":"src\/test\/java\/tests\/Features\/PostMethod[6:59] 17:09:07.296-17:09:07.300 Post API method 6 - using set new data to Request.json file","className":"failed"},{"id":11,"group":1,"content":"src\/test\/java\/tests\/Features\/FirstTest[1:4]","start":1650125346140,"end":1650125346263,"title":"src\/test\/java\/tests\/Features\/FirstTest[1:4] 17:09:06.140-17:09:06.263 Sample get API"},{"id":12,"group":1,"content":"src\/test\/java\/tests\/Features\/ConfigDemo[1:8]","start":1650125343041,"end":1650125343233,"title":"src\/test\/java\/tests\/Features\/ConfigDemo[1:8] 17:09:03.041-17:09:03.233 Config demo 1","className":"failed"},{"id":13,"group":1,"content":"src\/test\/java\/tests\/Features\/ConfigDemo[2:12]","start":1650125343250,"end":1650125343249,"title":"src\/test\/java\/tests\/Features\/ConfigDemo[2:12] 17:09:03.250-17:09:03.249 Get API method 1 - Using karate config file","className":"failed"},{"id":14,"group":1,"content":"src\/test\/java\/tests\/Features\/PutMethos[1:9]","start":1650125347591,"end":1650125347905,"title":"src\/test\/java\/tests\/Features\/PutMethos[1:9] 17:09:07.591-17:09:07.905 Put API method 1 - Using full url endpoint"},{"id":15,"group":1,"content":"src\/test\/java\/tests\/Features\/PutMethos[2:21]","start":1650125347908,"end":1650125348370,"title":"src\/test\/java\/tests\/Features\/PutMethos[2:21] 17:09:07.908-17:09:08.370 Put API method 2 - Using background"},{"id":16,"group":1,"content":"src\/test\/java\/tests\/Features\/DeleteMethod[1:9]","start":1650125344416,"end":1650125345693,"title":"src\/test\/java\/tests\/Features\/DeleteMethod[1:9] 17:09:04.416-17:09:05.693 Delete API method 1 - Using full url endpoint"},{"id":17,"group":1,"content":"src\/test\/java\/tests\/Features\/DeleteMethod[2:20]","start":1650125345700,"end":1650125345853,"title":"src\/test\/java\/tests\/Features\/DeleteMethod[2:20] 17:09:05.700-17:09:05.853 Delete API method 2 - using Background"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

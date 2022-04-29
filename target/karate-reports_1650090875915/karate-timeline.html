@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/tests\/PostMethod[1:10]","start":1650090762684,"end":1650090764351,"title":"src\/test\/java\/tests\/PostMethod[1:10] 07:32:42.684-07:32:44.351 Post API method 1 - using full endpoint"},{"id":2,"group":1,"content":"src\/test\/java\/tests\/PostMethod[2:19]","start":1650090764368,"end":1650090764550,"title":"src\/test\/java\/tests\/PostMethod[2:19] 07:32:44.368-07:32:44.550 Post API method 2 - using Background"},{"id":3,"group":1,"content":"src\/test\/java\/tests\/PostMethod[3:28]","start":1650090764566,"end":1650090765013,"title":"src\/test\/java\/tests\/PostMethod[3:28] 07:32:44.566-07:32:45.013 Post API method 3 - using response Assertions"},{"id":4,"group":1,"content":"src\/test\/java\/tests\/PostMethod[4:38]","start":1650090765028,"end":1650090765148,"title":"src\/test\/java\/tests\/PostMethod[4:38] 07:32:45.028-07:32:45.148 Post API method 4 - using reading PostResponse.json file"},{"id":5,"group":1,"content":"src\/test\/java\/tests\/PostMethod[5:48]","start":1650090765167,"end":1650090765187,"title":"src\/test\/java\/tests\/PostMethod[5:48] 07:32:45.167-07:32:45.187 Post API method 5 - using reading PostRequest.json file","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
