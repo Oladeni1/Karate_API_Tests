@@ -10,7 +10,7 @@
     <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
     <script type="text/javascript" src="res/bootstrap.min.js"></script>
     <script type="text/javascript" src="res/karate-report.js"></script>
-    <title>Karate Summary Report</title>  
+    <title>Karate Tags Report</title>  
   </head>
   <body>   
     <div id="root-container">
@@ -27,40 +27,31 @@
     </div>
   </div>
   <div id="nav-type">
-    <div>Features</div>
+    <div>Tags</div>
   </div>         
   <div id="nav-date">
-    <div>2022-05-13 02:35:45 am</div>
+    <div>2022-04-29 06:47:44 pm</div>
   </div>        
 </div>
 
       </div>
       <div id="content">
         <div class="page-heading alert alert-primary">
-          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
-          <a href="karate-timeline.html">Timeline</a>
+          <a href="karate-summary.html">Summary</a>
         </div>       
-        <table class="features-table table table-sm">
+        <table class="tags-table table table-sm ">
           <thead>
             <tr>
-              <th>Feature</th>
-              <th>Title</th>
-              <th class="num">Passed</th>
-              <th class="num">Failed</th>
-              <th class="num">Scenarios</th>
-              <th class="num">Time (ms)</th>
+              <th class="feature-cell">Feature</th>
+              <th classapend="passed">apiTest</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="passed">              
-              <td>
+            <tr class="passed">
+              <td class="feature-cell">
                 <a href="src.test.java.tests.Features.GetMethod.html">src/test/java/tests/Features/GetMethod.feature</a>
               </td>
-              <td>Get API karate demo</td>
-              <td class="num">1</td>
-              <td class="num">0</td>
-              <td class="num">1</td>
-              <td class="num">1153</td>            
+              <td classapend="passed">X</td>
             </tr>            
           </tbody>
         </table>
